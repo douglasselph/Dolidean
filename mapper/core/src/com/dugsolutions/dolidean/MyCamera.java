@@ -30,6 +30,7 @@ public class MyCamera extends OrthographicCamera {
         float w = Gdx.graphics.getWidth();
         float h = Gdx.graphics.getHeight();
         setToOrtho(false, w, h);
+        translate(w/2, h/2);
         update();
     }
 
