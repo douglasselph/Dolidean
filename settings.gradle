@@ -1,0 +1,5 @@
+include ':mapper:desktop'
+include ':mapper:android'
+include ':mapper:ios'
+include ':mapper:html'
+include ':mapper:core'

@@ -34,12 +34,11 @@ allprojects {
     }
 }
 
-project(":desktop") {
+project(":mapper:desktop") {
     apply plugin: "java"
 
-
     dependencies {
-        compile project(":core")
+        compile project(":mapper:core")
         compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
         compile "com.badlogicgames.gdx:gdx-box2d-platform:$gdxVersion:natives-desktop"
@@ -48,13 +47,13 @@ project(":desktop") {
     }
 }
 
-project(":android") {
+project(":mapper:android") {
     apply plugin: "android"
 
     configurations { natives }
 
     dependencies {
-        compile project(":core")
+        compile project(":mapper:core")
         compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
         natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
@@ -79,13 +78,12 @@ project(":android") {
     }
 }
 
-project(":ios") {
+project(":mapper:ios") {
     apply plugin: "java"
     apply plugin: "robovm"
 
-
     dependencies {
-        compile project(":core")
+        compile project(":mapper:core")
         compile "com.mobidevelop.robovm:robovm-rt:$roboVMVersion"
         compile "com.mobidevelop.robovm:robovm-cocoatouch:$roboVMVersion"
         compile "com.badlogicgames.gdx:gdx-backend-robovm:$gdxVersion"
@@ -95,13 +93,13 @@ project(":ios") {
     }
 }
 
-project(":html") {
+project(":mapper:html") {
     apply plugin: "gwt"
     apply plugin: "war"
 
 
     dependencies {
-        compile project(":core")
+        compile project(":mapper:core")
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
         compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
         compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
@@ -113,9 +111,8 @@ project(":html") {
     }
 }
 
-project(":core") {
+project(":mapper:core") {
     apply plugin: "java"
-
 
     dependencies {
         compile "com.badlogicgames.gdx:gdx:$gdxVersion"
